@@ -1,0 +1,26 @@
+<! DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        function addScript(src) {
+            const elem = document.createElement("script");
+            elem.src = src;
+            document.head.appendChild(elem);
+        }
+
+        function onUserData(data) {
+            console.log(data)
+        }
+
+        function onUserDataAnother(data) {
+            console.log(`Получили иформацию про Боба, а не про Адама: ${JSON.stringify(data)}`)
+        }
+
+    </script>
+</head>
+<body>
+<input onclick='addScript("http://localhost:4200/customer/13?callback=onUserData")' type='button' value='customer'>
+<input onclick='addScript("http://localhost:4200/customer/another?callback=onUserDataAnother")' type='button' value='another'>
+</body>
+</html>
